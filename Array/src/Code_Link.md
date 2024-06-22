@@ -14,3 +14,5 @@ MergeArray合并数组
 https://leetcode.cn/problems/merge-intervals/submissions/540206329/?envType=study-plan-v2&envId=top-100-liked
 Rotation - 轮转数组
 https://leetcode.cn/problems/rotate-array/submissions/540993338/?envType=study-plan-v2&envId=top-100-liked
+Exception - 除去自身的乘积
+https://leetcode.cn/problems/product-of-array-except-self/submissions/541319082/?envType=study-plan-v2&envId=top-100-liked
