@@ -18,3 +18,5 @@ Exception - 除去自身的乘积
 https://leetcode.cn/problems/product-of-array-except-self/submissions/541319082/?envType=study-plan-v2&envId=top-100-liked
 OnlyOnceNumber - 只出现一次的数字
 https://leetcode.cn/problems/single-number/?envType=study-plan-v2&envId=top-100-liked
+NextArray - 下一个序列
+https://leetcode.cn/problems/next-permutation/?envType=study-plan-v2&envId=top-100-liked
