@@ -22,3 +22,5 @@ NextArray - 下一个序列
 https://leetcode.cn/problems/next-permutation/?envType=study-plan-v2&envId=top-100-liked
 GasStation - 加油站
 https://leetcode.cn/problems/gas-station/description/?envType=study-plan-v2&envId=top-interview-150
+ZTransition - Z字形变换
+https://leetcode.cn/problems/zigzag-conversion/description/?envType=study-plan-v2&envId=top-interview-150
