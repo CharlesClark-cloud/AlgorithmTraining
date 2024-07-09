@@ -3,6 +3,36 @@
  * Package: PACKAGE_NAME
  */
 public class ZTransition {
+    public String convertOfficial(String s, int numRows) {
+//       模仿移动，创建二维矩阵，按照z字，把字母填入矩阵，最后扫描二维矩阵。
+//        填入过程有两种，一种是向下移动 y-1，一种是向又上移动 x+1 y+1
+        int n = s.length(), r = numRows;
+        if (r == 1 || r >= n) {
+            return s;
+        }
+        int t = r * 2 - 2;
+        int c = (n + t - 1) / t * (r - 1);
+        char[][] mat = new char[r][c];
+        for (int i = 0, x = 0, y = 0; i < n; ++i) {
+            mat[x][y] = s.charAt(i);
+            if (i % t < r - 1) {
+                ++x; // 向下移动
+            } else {
+                --x;
+                ++y; // 向右上移动
+            }
+        }
+        StringBuffer ans = new StringBuffer();
+        for (char[] row : mat) {
+            for (char ch : row) {
+                if (ch != 0) {
+                    ans.append(ch);
+                }
+            }
+        }
+        return ans.toString();
+    }
+
     public String convert(String s, int numRows) {
         //首先得到间隔数组
         //首尾两行
