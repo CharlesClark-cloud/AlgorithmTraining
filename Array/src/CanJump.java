@@ -7,16 +7,17 @@ import java.util.Queue;
  */
 public class CanJump {
     public boolean canJump(int[] nums) {
-        int n = nums.length;
-        int rightMost = 0;
-        for (int i = 0; i < n; i++) {
-            if(i<=rightMost){
-                rightMost = Math.max(rightMost,i+nums[i]);//实时更新最远距离
-                if(rightMost>=n){
-                    return  true;
+        int maxPosition = 0;
+        for(int i = 0;i<nums.length;i++){
+            if(i<=maxPosition){
+                maxPosition = Math.max(maxPosition,i+nums[i]);
+                if(maxPosition>=nums.length-1){
+                    return true;
                 }
             }
+
         }
+
         return  false;
     }
 
