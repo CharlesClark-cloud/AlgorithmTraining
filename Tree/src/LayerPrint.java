@@ -71,7 +71,7 @@ public class LayerPrint{
 //        root.left.right=new TreeNode(5);
 //        root.right.left = new TreeNode(3);
 //        root.right.right = new TreeNode(4);
-        layerPrint(root);
+//        layerPrint(root);
 
 
     }
