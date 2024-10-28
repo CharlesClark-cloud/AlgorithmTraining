@@ -3,6 +3,22 @@
  * Package: PACKAGE_NAME
  */
 public class MergeKLists {
+    public ListNode mergeKListsWithRecursion(ListNode[] lists) {
+//        参考二分查找
+        return  merge(lists,0,lists.length-1);
+    }
+    public ListNode merge(ListNode[] lists,int l,int r){
+        if(l==r){
+//            自身
+            return  lists[l];
+        }
+        if(l>r){
+            return null;
+        }
+        int mid = (l+r)>>1;
+        //二分合并哈哈
+        return mergeTwoSortedList(merge(lists,l,mid),merge(lists,mid,r));
+    }
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length == 0 || lists.length == 1){
             return lists.length==0?null:lists[0];
