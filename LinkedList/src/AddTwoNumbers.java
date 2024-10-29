@@ -35,7 +35,6 @@ public class AddTwoNumbers {
             currentL1 =currentL1.next;
         }
         boolean first =true;
-
         while(currentL2!=null){
             //l2更长
             int sum = currentL2.val+upper;
@@ -63,15 +62,15 @@ public class AddTwoNumbers {
     }
 
     public static void main(String[] args) {
-        ListNode l1  = new ListNode(2);
-        l1.next = new ListNode(4);
+        ListNode l1  = new ListNode(9);
+        l1.next = new ListNode(9);
         l1.next.next = new ListNode(9);
 //        l1.next.next.next = new ListNode(9);
 
-        ListNode l2 = new ListNode(5);
-        l2.next = new ListNode(6);
-        l2.next.next = new ListNode(4);
-        l2.next.next.next = new ListNode(9);
+        ListNode l2 = new ListNode(9);
+        l2.next = new ListNode(9);
+        l2.next.next = new ListNode(9);
+//        l2.next.next.next = new ListNode(9);
         ListNode res = addTwoNumbers(l1,l2);
         while (res!=null){
             System.out.println(res.val);
