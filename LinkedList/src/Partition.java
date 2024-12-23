@@ -3,7 +3,7 @@
  * Package: PACKAGE_NAME
  */
 public class Partition {
-    public ListNode partition(ListNode head, int x) {
+    public static ListNode partition(ListNode head, int x) {
         if( head == null||head.next == null ){
             return head;
         }

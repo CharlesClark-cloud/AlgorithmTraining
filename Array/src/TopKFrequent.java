@@ -20,8 +20,6 @@ public class TopKFrequent {
             res2[i[0]][1]=v;
             i[0]++;
         });
-
-
         Arrays.sort(res2, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {

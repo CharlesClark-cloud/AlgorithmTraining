@@ -1,8 +1,51 @@
+import java.util.Random;
+
 /**
  * ClassName: TopKTarget
  * Package: PACKAGE_NAME
  */
 public class TopKTarget {
+    public  static  int   heapSortMethod(int[] array,int k){
+        //先进行一次排序
+        for(int i = array.length/2-1;i>=0;i--){
+            heapSort(array,array.length-1,i);
+        }
+        //此时根节点就是最大值
+        //拿到最大值要换到数组最后面，因为堆排序每次都会把最大值拿到第一个位置
+        for(int i= array.length-1;i>0;i--){
+            int temp = array[i];
+            array[i] = array[0];
+            array[0] = temp; //交换完成 现在从array[0] - array[i-1] 就不是有序的了
+            //进行堆排序
+            if(i == array.length-k){
+                break;//已经到目标值了 进行剪枝操作
+            }
+            heapSort(array,i-1,0); //此处因为i已经被换为次轮的最大值了，所以递归边界要减一
+        }
+        return array[array.length-k];
+
+    }
+    public  static  void heapSort(int[] array,int remainBorder,int processRoot){
+            int largest = processRoot;
+            int leftChild = 2*processRoot+1;
+            int rightChild = 2*processRoot+2;
+            if(leftChild<=remainBorder&&array[leftChild]>array[processRoot]){
+                largest = leftChild;
+            }
+            if(rightChild<=remainBorder&&array[rightChild]>array[processRoot]){
+                largest = rightChild;
+            }
+            if(largest!=processRoot){
+                //这是此前三个几点已经保证了
+                int temp = array[largest];
+                array[largest] = array[processRoot];
+                array[processRoot] = temp;
+                //然后还要向下传递 看largest 是和谁换的，然后向下递归调整子树
+                heapSort(array,remainBorder,largest);
+            }
+
+
+    }
 
     public  static  void  quickSort(int[] array,int left,int right){
         //TODO  普通快排
@@ -106,6 +149,9 @@ public class TopKTarget {
             return array[left];
         }
         int pivot = left; // 基准值选择第一个元素
+        //此处的pivot 可以随机生成尽量避免n*n 时间复杂度
+//        Random random = new Random();
+//        int pivot2 = left+random.nextInt(right-left+1);
         int l = left;
         int r = right;
         while (l < r) {
@@ -152,5 +198,6 @@ public class TopKTarget {
         }
 
     }
+
 
 }

@@ -43,6 +43,8 @@ public class DeleteDuplicates {
                 right = right.next;
             }
         }
+
         return nHead.next;
+
     }
 }
